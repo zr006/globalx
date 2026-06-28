@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Globalx</title>
+  <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">Globalx</div>
+      <nav class="main-nav">
+        <a href="/index.html">Home</a>
+        <a href="/events.html">Events</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/members/login.html">Members</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Contact Us</h1>
+    <p>Have questions about membership, events, or Paddletek products? Send us a message.</p>
+
+    <!-- Netlify/Formspree compatible form -->
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" class="card">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hidden"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+
+      <label>Full name
+        <input type="text" name="name" required>
+      </label>
+
+      <label>Email
+        <input type="email" name="email" required>
+      </label>
+
+      <label>Subject
+        <input type="text" name="subject">
+      </label>
+
+      <label>Message
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+
+      <p><button class="btn" type="submit">Send message</button></p>
+    </form>
+
+    <section class="card" style="margin-top:20px">
+      <h3>Other ways to reach us</h3>
+      <p>Email: <a href="mailto:info@globalx.example">info@globalx.example</a></p>
+      <p>Phone: +1 (555) 123-4567</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Globalx — Promoting Pickleball</p>
+    </div>
+  </footer>
+  <script src="/js/script.js"></script>
+</body>
+</html>

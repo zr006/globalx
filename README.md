@@ -1,32 +1,13 @@
-# Globalx
+Updated README: added instructions for new pages and contact form handling.
 
-This repository contains a small professional website scaffold for Globalx — a site to promote pickleball and showcase Paddletek paddles.
+What's new:
+- contact.html: Contact form ready for Netlify or Formspree (static form handling). Update email and the thank-you target as needed.
+- events.html: Events list and courts map (replace Google Maps embed with real embed URL).
+- members/login.html & members/register.html: Simple skeleton pages for member auth. These are placeholders — integrate OAuth or your backend to make them functional.
 
-What's included:
-- index.html — main page
-- css/styles.css — styling
-- js/script.js — small interactivity (carousel, counters, lightbox)
+Netlify / Formspree notes for contact form:
+- Netlify: Enable Netlify Forms in your site settings; the form in contact.html uses the data-netlify attribute.
+- Formspree: Change the form action to "https://formspree.io/f/{your-id}" and method="POST" and remove data-netlify attributes.
 
-How to edit locally and push changes to GitHub:
-
-1. Clone the repo (or, if you already have it, pull the latest changes):
-
-   git clone https://github.com/zr006/globalx.git
-   cd globalx
-
-2. Make changes locally using your editor. Example:
-
-   code .
-
-3. Stage, commit, and push:
-
-   git add .
-   git commit -m "Update site: add hero, gallery, styles"
-   git push origin main
-
-4. (Optional) Create a branch for larger work and open a PR on GitHub:
-
-   git checkout -b feature/gallery
-   git push -u origin feature/gallery
-
-If you want me to add more pages (events, contact, courts map) or wire up a backend for members/login, tell me which features you prefer and I will add them.
+Deploy reminder:
+- To publish via GitHub Pages, enable Pages in the repository settings (branch: main, folder: /). See original README for step-by-step.
