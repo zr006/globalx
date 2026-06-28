@@ -1,121 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Globalx Sport | Global Pickleball & Paddletek Official Platform</title>
-    <!-- Fix GitHub Pages subfolder path -->
-    <base href="./">
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Fixed Relative Path -->
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Globalx — Promoting Pickleball</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Globalx — promoting pickleball with community events, courts network, and pro shop.">
 </head>
 <body>
-    <!-- Top Global Navigation Bar -->
-    <header class="global-header">
-        <div class="logo-text">Globalx Sport</div>
-        <nav>
-            <a href="#" class="nav-link">Home</a>
-            <a href="#" class="nav-link">Pickleball News</a>
-            <a href="#" class="nav-link">Paddletek Brand</a>
-            <a href="#" class="nav-link">Global Centers</a>
-            <a href="#" class="nav-link">Member Zone</a>
-            <a href="#" class="nav-link">Tournaments</a>
-            <a href="#" class="nav-link">Contact Us</a>
-        </nav>
-    </header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">Globalx</div>
+      <nav class="main-nav">
+        <a href="#about">About</a>
+        <a href="#advantages">Advantages</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#members">Members</a>
+        <a href="#proshop">Pro Shop</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Desktop Area with Microsoft Style Draggable Windows -->
-    <section class="desktop-container">
-        <!-- Window 1: Global Business Dashboard (Member + Center Stats) -->
-        <div class="win-panel" style="left:20px; top:20px; width:420px; z-index:10;">
-            <div class="win-title-bar">
-                <div class="win-title-text">Global Business Dashboard</div>
-                <div class="win-control-btn">
-                    <span class="btn-min"></span>
-                    <span class="btn-max"></span>
-                    <span class="btn-close"></span>
-                </div>
-            </div>
-            <div class="win-content">
-                <h3 class="text-lg font-semibold mb-4 text-slate-800">Real-Time Global Data</h3>
-                <div class="stat-card">
-                    <div class="stat-number" id="member-count">0</div>
-                    <div class="stat-label">Total Registered Pickleball Members</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="center-count">0</div>
-                    <div class="stat-label">Global Training & Sport Centers Network</div>
-                </div>
-                <div class="mt-4 text-sm text-slate-600">
-                    Data updated daily | Cover Asia, Europe, North America, Oceania
-                </div>
-            </div>
+  <!-- Top banner / carousel for product showcase -->
+  <section class="hero" id="home">
+    <div class="carousel" id="carousel">
+      <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?q=80&w=2000&auto=format&fit=crop&s=')">
+        <div class="slide-inner">
+          <h1>Globalx x Paddletek</h1>
+          <p>Premium pickleball paddles. Precision engineered for every level.</p>
+          <a class="btn" href="#proshop">Shop Paddletek</a>
         </div>
+      </div>
 
-        <!-- Window 2: Latest Pickleball Sport News -->
-        <div class="win-panel" style="left:480px; top:60px; width:520px; z-index:9;">
-            <div class="win-title-bar">
-                <div class="win-title-text">Pickleball Global News Feed</div>
-                <div class="win-control-btn">
-                    <span class="btn-min"></span>
-                    <span class="btn-max"></span>
-                    <span class="btn-close"></span>
-                </div>
-            </div>
-            <div class="win-content">
-                <div class="news-item">
-                    <span class="news-brand-tag">Paddletek</span>
-                    <span class="news-date">Jun 26, 2026</span>
-                    <div class="news-title">Paddletek New Pro Series Paddle Launch for Globalx Professional Athletes</div>
-                </div>
-                <div class="news-item">
-                    <span class="news-brand-tag">Tournament</span>
-                    <span class="news-date">Jun 24, 2026</span>
-                    <div class="news-title">2026 Asia Pickleball Open Registration Open at All Globalx Sport Centers</div>
-                </div>
-                <div class="news-item">
-                    <span class="news-brand-tag">Training</span>
-                    <span class="news-date">Jun 20, 2026</span>
-                    <div class="news-title">Globalx Summer Youth Pickleball Camp Co-host with Official Paddletek Coaches</div>
-                </div>
-                <div class="news-item">
-                    <span class="news-brand-tag">Global Center</span>
-                    <span class="news-date">Jun 15, 2026</span>
-                    <div class="news-title">New Globalx Sport Pickleball Center Opening in Sydney & Toronto This July</div>
-                </div>
-                <button class="mt-4 bg-[#0078d4] text-white px-4 py-2 rounded text-sm">View All News</button>
-            </div>
+      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1521413073732-2a9aa3a9c6b9?q=80&w=2000&auto=format&fit=crop&s=')">
+        <div class="slide-inner">
+          <h1>Join the Pickleball Movement</h1>
+          <p>Community courts, events, coaching, and more.</p>
+          <a class="btn" href="#members">Become a Member</a>
         </div>
+      </div>
 
-        <!-- Window 3: Paddletek Brand Introduction Panel -->
-        <div class="win-panel" style="left:120px; top:400px; width:380px; z-index:8;">
-            <div class="win-title-bar">
-                <div class="win-title-text">Paddletek Official Partner Zone</div>
-                <div class="win-control-btn">
-                    <span class="btn-min"></span>
-                    <span class="btn-max"></span>
-                    <span class="btn-close"></span>
-                </div>
-            </div>
-            <div class="win-content">
-                <h4 class="font-bold text-lg mb-3">Globalx × Paddletek Strategic Cooperation</h4>
-                <p class="text-sm text-slate-700 mb-3">
-                    Globalx Sport is exclusive global training partner of Paddletek, the top professional pickleball paddle manufacturer.
-                </p>
-                <ul class="list-disc pl-5 text-sm text-slate-700 space-y-2">
-                    <li>Pro athlete training certification system</li>
-                    <li>Official paddle retail & trial service in all centers</li>
-                    <li>Joint professional competition sponsorship</li>
-                    <li>Youth amateur to pro level promotion training</li>
-                </ul>
-                <button class="mt-4 border border-[#0078d4] text-[#0078d4] px-4 py-2 rounded text-sm">Explore Paddletek Gear</button>
-            </div>
-        </div>
+      <button class="carousel-btn prev" aria-label="Previous">‹</button>
+      <button class="carousel-btn next" aria-label="Next">›</button>
+    </div>
+  </section>
+
+  <main>
+    <section id="about" class="container about">
+      <h2>About Globalx</h2>
+      <p>Globalx is dedicated to promoting pickleball — bringing players together, building courts, and supporting local programs. We partner with brands like Paddletek to bring top-tier equipment to our community.</p>
     </section>
 
-    <!-- Fixed JS Path -->
-    <script src="assets/js/main.js"></script>
+    <section id="advantages" class="container stats">
+      <h2>Our Advantages</h2>
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-number" data-target="12000">0</div>
+          <div class="stat-label">Members</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number" data-target="350">0</div>
+          <div class="stat-label">Courts in our network</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number" data-target="18">0</div>
+          <div class="stat-label">Government projects supported</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="container gallery">
+      <h2>Gallery</h2>
+      <p class="muted">A snapshot from our events and players.</p>
+      <div class="gallery-grid">
+        <a class="gallery-item" href="https://images.unsplash.com/photo-1534367611606-5f3a3fba5e32?q=80&w=1200&auto=format&fit=crop&s=" data-caption="Pickleball action"><img src="https://images.unsplash.com/photo-1534367611606-5f3a3fba5e32?q=80&w=800&auto=format&fit=crop&s=" alt="Pickleball action"></a>
+        <a class="gallery-item" href="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop&s=" data-caption="Players"> <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800&auto=format&fit=crop&s=" alt="Players"></a>
+        <a class="gallery-item" href="https://images.unsplash.com/photo-1521413073732-2a9aa3a9c6b9?q=80&w=1200&auto=format&fit=crop&s=" data-caption="Community event"><img src="https://images.unsplash.com/photo-1521413073732-2a9aa3a9c6b9?q=80&w=800&auto=format&fit=crop&s=" alt="Community event"></a>
+        <a class="gallery-item" href="https://images.unsplash.com/photo-1519741495446-0563e6d2f8d3?q=80&w=1200&auto=format&fit=crop&s=" data-caption="Courts"><img src="https://images.unsplash.com/photo-1519741495446-0563e6d2f8d3?q=80&w=800&auto=format&fit=crop&s=" alt="Courts"></a>
+      </div>
+      <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true">
+        <button id="lightbox-close" class="lightbox-close" aria-label="Close">×</button>
+        <img id="lightbox-img" src="" alt="">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+      </div>
+    </section>
+
+    <section id="members" class="container members">
+      <h2>Members Corner</h2>
+      <p class="muted">Members get access to exclusive events, courts booking, and discounts at our pro shop.</p>
+      <div class="members-grid">
+        <div class="card">
+          <h3>Member Login</h3>
+          <form class="login-form" onsubmit="event.preventDefault(); alert('This is a demo. Replace with real auth.');">
+            <label>Email <input type="email" required></label>
+            <label>Password <input type="password" required></label>
+            <button class="btn">Sign in</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Benefits</h3>
+          <ul>
+            <li>Court booking priority</li>
+            <li>Member-only events</li>
+            <li>Discounts at partner shops</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="proshop" class="container proshop">
+      <h2>Pro Shop</h2>
+      <p class="muted">We partner with Paddletek for quality paddles. Browse recommended products below.</p>
+      <div class="product-list">
+        <article class="product">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop&s=" alt="Paddle">
+          <h3>Paddletek Tempest</h3>
+          <p class="price">$119.99</p>
+          <p><a class="btn" href="https://www.paddletek.com" target="_blank" rel="noopener">Buy at Paddletek</a></p>
+        </article>
+        <article class="product">
+          <img src="https://images.unsplash.com/photo-1521413073732-2a9aa3a9c6b9?q=80&w=800&auto=format&fit=crop&s=" alt="Paddle">
+          <h3>Paddletek Bantam</h3>
+          <p class="price">$89.99</p>
+          <p><a class="btn" href="https://www.paddletek.com" target="_blank" rel="noopener">Buy at Paddletek</a></p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Globalx — Promoting Pickleball</p>
+      <p class="muted">Built with ♥ for the pickleball community.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

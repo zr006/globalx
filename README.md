@@ -1,23 +1,32 @@
-# Globalx Sport Official Website
-Professional Global Sport Platform Focus on Pickleball & Paddletek Brand
-Windows OS Box Panel Design Homepage | Real-time Sports News | Club Member & Global Center Network Dashboard
+# Globalx
 
-## Project Intro
-This static website adopts Microsoft Windows-style draggable window panel layout on homepage.
-Core content focus:
-1. Latest global pickleball sport news & tournament updates
-2. Paddletek brand official introduction, athlete training system
-3. Real-time dashboard: Total registered members, global training center network distribution
-4. Club membership, event registration, court reservation modules
+This repository contains a small professional website scaffold for Globalx — a site to promote pickleball and showcase Paddletek paddles.
 
-## Tech Stack
-- HTML5 Semantic Layout
-- Tailwind CSS 3 (Responsive design, Windows UI styling)
-- Vanilla JavaScript (Window drag, number counter animation, news carousel)
-- Pure static page, zero backend dependency, deployable via GitHub Pages
+What's included:
+- index.html — main page
+- css/styles.css — styling
+- js/script.js — small interactivity (carousel, counters, lightbox)
 
-## Local Run Guide
-1. Clone repo to local
-```bash
-git clone https://github.com/[YOUR_GITHUB_NAME]/Globalx-Sport-Website.git
-cd Globalx-Sport-Website
+How to edit locally and push changes to GitHub:
+
+1. Clone the repo (or, if you already have it, pull the latest changes):
+
+   git clone https://github.com/zr006/globalx.git
+   cd globalx
+
+2. Make changes locally using your editor. Example:
+
+   code .
+
+3. Stage, commit, and push:
+
+   git add .
+   git commit -m "Update site: add hero, gallery, styles"
+   git push origin main
+
+4. (Optional) Create a branch for larger work and open a PR on GitHub:
+
+   git checkout -b feature/gallery
+   git push -u origin feature/gallery
+
+If you want me to add more pages (events, contact, courts map) or wire up a backend for members/login, tell me which features you prefer and I will add them.
