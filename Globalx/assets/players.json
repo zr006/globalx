@@ -1,0 +1,92 @@
+[
+  {
+    "rank": 1,
+    "name": "Andrew Wang",
+    "rating": 7.82,
+    "matches": 146,
+    "win_rate": 86.3,
+    "tier": "Pro Elite",
+    "avatar": "assets/avatar-andrew.svg"
+  },
+  {
+    "rank": 2,
+    "name": "Lisa Zhang",
+    "rating": 7.65,
+    "matches": 132,
+    "win_rate": 82.5,
+    "tier": "Advanced Pro",
+    "avatar": "assets/avatar-lisa.svg"
+  },
+  {
+    "rank": 3,
+    "name": "Mike Liu",
+    "rating": 7.41,
+    "matches": 121,
+    "win_rate": 79.2,
+    "tier": "Advanced Pro",
+    "avatar": "assets/avatar-mike.svg"
+  },
+  {
+    "rank": 4,
+    "name": "Sarah Chen",
+    "rating": 7.23,
+    "matches": 108,
+    "win_rate": 76.8,
+    "tier": "Amateur Advanced",
+    "avatar": "assets/avatar-sarah.svg"
+  },
+  {
+    "rank": 5,
+    "name": "Tom Huang",
+    "rating": 7.05,
+    "matches": 97,
+    "win_rate": 74.1,
+    "tier": "Amateur Advanced",
+    "avatar": "assets/avatar-tom.svg"
+  },
+  {
+    "rank": 6,
+    "name": "Alex Chen",
+    "rating": 6.88,
+    "matches": 88,
+    "win_rate": 72.0,
+    "tier": "Amateur",
+    "avatar": "assets/avatar-alex.svg"
+  },
+  {
+    "rank": 7,
+    "name": "Priya Kapoor",
+    "rating": 6.70,
+    "matches": 76,
+    "win_rate": 69.6,
+    "tier": "Amateur",
+    "avatar": "assets/avatar-priya.svg"
+  },
+  {
+    "rank": 8,
+    "name": "Diego M.",
+    "rating": 6.45,
+    "matches": 64,
+    "win_rate": 66.8,
+    "tier": "Club",
+    "avatar": "assets/avatar-diego.svg"
+  },
+  {
+    "rank": 9,
+    "name": "Yuna S.",
+    "rating": 6.12,
+    "matches": 58,
+    "win_rate": 63.4,
+    "tier": "Club",
+    "avatar": "assets/avatar-yuna.svg"
+  },
+  {
+    "rank": 10,
+    "name": "Ivan Petrov",
+    "rating": 5.98,
+    "matches": 49,
+    "win_rate": 58.7,
+    "tier": "Club",
+    "avatar": "assets/avatar-ivan.svg"
+  }
+]
