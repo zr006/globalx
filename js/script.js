@@ -1,104 +1,178 @@
-// Small script for carousel, counters, and lightbox (robustified)
-document.addEventListener('DOMContentLoaded', function () {
-  // Carousel
-  const slides = Array.from(document.querySelectorAll('.slide'));
-  let idx = 0;
-  const nextBtn = document.querySelector('.carousel-btn.next');
-  const prevBtn = document.querySelector('.carousel-btn.prev');
+/* ==========================================
+   GLOBALX - INTERACTIVE FUNCTIONALITY
+   ========================================== */
 
-  function show(i) {
-    if (!slides.length) return;
-    slides.forEach(s => s.classList.remove('active'));
-    slides[i].classList.add('active');
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile Menu Toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    });
   }
 
-  function next() { if (!slides.length) return; idx = (idx + 1) % slides.length; show(idx); }
-  function prev() { if (!slides.length) return; idx = (idx - 1 + slides.length) % slides.length; show(idx); }
-
-  if (nextBtn) nextBtn.addEventListener('click', next);
-  if (prevBtn) prevBtn.addEventListener('click', prev);
-
-  let auto = slides.length > 1 ? setInterval(next, 6000) : null;
-  [nextBtn, prevBtn].forEach(b => {
-    if (!b) return;
-    b.addEventListener('click', () => {
-      if (auto) { clearInterval(auto); auto = setInterval(next, 6000); }
+  // Smooth Scroll for Navigation Links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
     });
   });
 
-  // Counters
-  const counters = Array.from(document.querySelectorAll('.stat-number'));
-  const runCounters = () => {
-    counters.forEach(c => {
-      const target = Number(c.dataset.target) || 0;
-      const duration = 1400;
-      const start = Number(c.textContent) || 0;
-      const startTime = performance.now();
-      function tick(now) {
-        const progress = Math.min((now - startTime) / duration, 1);
-        c.textContent = Math.floor(progress * (target - start) + start);
-        if (progress < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-    });
+  // Navbar Background on Scroll
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.style.background = 'rgba(10, 14, 39, 0.95)';
+      navbar.style.borderBottom = '1px solid rgba(0, 217, 255, 0.2)';
+    } else {
+      navbar.style.background = 'rgba(10, 14, 39, 0.8)';
+      navbar.style.borderBottom = '1px solid rgba(0, 217, 255, 0.1)';
+    }
+  });
+
+  // Animate Stats on Scroll
+  const statsCards = document.querySelectorAll('.stat-card');
+  const observerOptions = {
+    threshold: 0.5,
+    rootMargin: '0px'
   };
 
-  // Trigger when stats in view
-  const stats = document.querySelector('.stats');
-  if (stats && 'IntersectionObserver' in window) {
-    const obs = new IntersectionObserver((entries, observer) => {
-      if (entries[0] && entries[0].isIntersecting) { runCounters(); observer.disconnect(); }
-    }, { threshold: 0.4 });
-    obs.observe(stats);
-  } else {
-    // Fallback
-    runCounters();
-  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'slideUp 0.6s ease forwards';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
 
-  // Lightbox for gallery
-  const items = Array.from(document.querySelectorAll('.gallery-item'));
-  const lightbox = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightbox-img');
-  const lbCaption = document.getElementById('lightbox-caption');
-  const lbClose = document.getElementById('lightbox-close');
+  statsCards.forEach(card => {
+    observer.observe(card);
+  });
 
-  function openLightbox(src, caption) {
-    if (!lightbox || !lbImg) return;
-    lbImg.src = src || '';
-    lbImg.alt = caption || '';
-    if (lbCaption) lbCaption.textContent = caption || '';
-    lightbox.classList.remove('hidden');
-    if (lbClose) lbClose.focus();
-  }
-
-  function closeLightbox() {
-    if (!lightbox) return;
-    lightbox.classList.add('hidden');
-    if (lbImg) { lbImg.src = ''; lbImg.alt = ''; }
-  }
-
-  items.forEach(it => {
-    it.addEventListener('click', function (e) {
+  // Form Handling
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const img = this.querySelector('img');
-      const src = img ? img.src : this.href;
-      const caption = this.dataset.caption || (img && img.alt) || '';
-      openLightbox(src, caption);
-    });
-  });
-
-  if (lbClose) lbClose.addEventListener('click', closeLightbox);
-  if (lightbox) {
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
+      alert('Thank you for your message! We\'ll get back to you soon.');
+      contactForm.reset();
     });
   }
-  // keyboard support
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
+
+  // Button Click Effects
+  document.querySelectorAll('.btn-primary, .btn-secondary, .btn-outline').forEach(btn => {
+    btn.addEventListener('click', function(event) {
+      createRipple(event, this);
+    });
   });
 
-  // Year
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  function createRipple(event, element) {
+    const ripple = document.createElement('span');
+    const rect = element.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    ripple.classList.add('ripple');
+
+    const rippleEl = element.querySelector('.ripple');
+    if (rippleEl) {
+      rippleEl.remove();
+    }
+
+    element.appendChild(ripple);
+  }
+
+  // Lazy Loading for Images
+  const images = document.querySelectorAll('img');
+  if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    images.forEach(img => {
+      img.style.opacity = '0';
+      img.style.transition = 'opacity 0.3s ease';
+      imageObserver.observe(img);
+    });
+  }
+
+  // Hover Effects on Cards
+  document.querySelectorAll('.feature-card, .product-card, .tournament-card, .stat-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-5px)';
+    });
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0)';
+    });
+  });
 });
+
+// Add ripple effect styles dynamically
+const style = document.createElement('style');
+style.textContent = `
+  button {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
+  }
+
+  @keyframes ripple-animation {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 217, 255, 0.3);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 217, 255, 0.5);
+  }
+`;
+document.head.appendChild(style);

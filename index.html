@@ -1,148 +1,318 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Globalx — Promoting Pickleball</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Globalx — Premier Pickleball Platform</title>
+  <meta name="description" content="Globalx: The ultimate pickleball platform. Professional tournaments, community courts, and premium equipment.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <meta name="description" content="Globalx — promoting pickleball with community events, courts network, and pro shop.">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo">Globalx</div>
-      <nav class="main-nav">
-        <a href="#about">About</a>
-        <a href="#advantages">Advantages</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#members">Members</a>
-        <a href="#proshop">Pro Shop</a>
-      </nav>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-text">GLOBALX</span>
+        <span class="logo-accent">•</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#tournaments">Tournaments</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <button class="btn-secondary">Sign In</button>
+        <button class="btn-primary">Join Now</button>
+      </div>
+      <button class="menu-toggle">☰</button>
     </div>
-  </header>
+  </nav>
 
-  <!-- Top banner / carousel for product showcase -->
-  <section class="hero" id="home">
-    <div class="carousel" id="carousel">
-      <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?q=80&w=2000&auto=format&fit=crop&s=')">
-        <div class="slide-inner">
-          <h1>Globalx x Paddletek</h1>
-          <p>Premium pickleball paddles. Precision engineered for every level.</p>
-          <a class="btn" href="#proshop">Shop Paddletek</a>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Master the Game<br>
+          <span class="gradient-text">Elevate Your Play</span>
+        </h1>
+        <p class="hero-subtitle">Join the world's most dynamic pickleball community. Premium courts, professional coaching, and thrilling tournaments.</p>
+        <div class="hero-buttons">
+          <button class="btn-primary btn-large">Explore Courts</button>
+          <button class="btn-outline btn-large">Watch Demo</button>
         </div>
       </div>
-
-      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1521413073732-2a9aa3a9c6b9?q=80&w=2000&auto=format&fit=crop&s=')">
-        <div class="slide-inner">
-          <h1>Join the Pickleball Movement</h1>
-          <p>Community courts, events, coaching, and more.</p>
-          <a class="btn" href="#members">Become a Member</a>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="card-gradient"></div>
+          <div class="card-content">
+            <svg class="paddle-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 10 L60 40 L70 50 L60 60 L50 90 L40 60 L30 50 L40 40 Z" fill="currentColor"/>
+            </svg>
+          </div>
         </div>
       </div>
-
-      <button class="carousel-btn prev" aria-label="Previous">‹</button>
-      <button class="carousel-btn next" aria-label="Next">›</button>
     </div>
   </section>
 
-  <main>
-    <section id="about" class="container about">
-      <h2>About Globalx</h2>
-      <p>Globalx is dedicated to promoting pickleball — bringing players together, building courts, and supporting local programs. We partner with brands like Paddletek to bring top-tier equipment and community programs.</p>
-    </section>
-
-    <section id="advantages" class="container stats">
-      <h2>Our Advantages</h2>
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
       <div class="stats-grid">
-        <div class="stat">
-          <div class="stat-number" data-target="12000">0</div>
-          <div class="stat-label">Members</div>
+        <div class="stat-card">
+          <div class="stat-number">15K+</div>
+          <div class="stat-label">Active Players</div>
+          <div class="stat-bar"></div>
         </div>
-        <div class="stat">
-          <div class="stat-number" data-target="350">0</div>
-          <div class="stat-label">Courts in our network</div>
+        <div class="stat-card">
+          <div class="stat-number">450+</div>
+          <div class="stat-label">Court Locations</div>
+          <div class="stat-bar"></div>
         </div>
-        <div class="stat">
-          <div class="stat-number" data-target="18">0</div>
-          <div class="stat-label">Government projects supported</div>
+        <div class="stat-card">
+          <div class="stat-number">$2M+</div>
+          <div class="stat-label">Prize Pool</div>
+          <div class="stat-bar"></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Annual Events</div>
+          <div class="stat-bar"></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="gallery" class="container gallery">
-      <h2>Gallery</h2>
-      <p class="muted">A snapshot from our events and players.</p>
-      <div class="gallery-grid">
-        <a class="gallery-item" href="https://images.unsplash.com/photo-1534367611606-5f3a3fba5e32?q=80&w=1200&auto=format&fit=crop&s=" data-caption="Pickleball action">
-          <img src="https://images.unsplash.com/photo-1534367611606-5f3a3fba5e32?q=80&w=1200&auto=format&fit=crop&s=" alt="Pickleball action">
-        </a>
-        <a class="gallery-item" href="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop&s=" data-caption="Players">
-          <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop&s=" alt="Players">
-        </a>
-        <a class="gallery-item" href="https://images.unsplash.com/photo-1521413073732-2a9aa3a9c6b9?q=80&w=1200&auto=format&fit=crop&s=" data-caption="Community event">
-          <img src="https://images.unsplash.com/photo-1521413073732-2a9aa3a9c6b9?q=80&w=1200&auto=format&fit=crop&s=" alt="Community event">
-        </a>
-        <a class="gallery-item" href="https://images.unsplash.com/photo-1519741495446-0563e6d2f8d3?q=80&w=1200&auto=format&fit=crop&s=" data-caption="Courts">
-          <img src="https://images.unsplash.com/photo-1519741495446-0563e6d2f8d3?q=80&w=1200&auto=format&fit=crop&s=" alt="Courts">
-        </a>
-      </div>
-      <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true">
-        <button id="lightbox-close" class="lightbox-close" aria-label="Close">×</button>
-        <img id="lightbox-img" src="" alt="">
-        <div id="lightbox-caption" class="lightbox-caption"></div>
-      </div>
-    </section>
-
-    <section id="members" class="container members">
-      <h2>Members Corner</h2>
-      <p class="muted">Members get access to exclusive events, courts booking, and discounts at our pro shop.</p>
-      <div class="members-grid">
-        <div class="card">
-          <h3>Member Login</h3>
-          <form class="login-form" onsubmit="event.preventDefault(); alert('This is a demo. Replace with real auth.');">
-            <label>Email <input type="email" required></label>
-            <label>Password <input type="password" required></label>
-            <button class="btn">Sign in</button>
-          </form>
+  <!-- Features Section -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <h2 class="section-title">Why Choose Globalx?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon professional">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7L2 12C2 16.5 12 22 12 22S22 16.5 22 12L22 7L12 2Z"/>
+            </svg>
+          </div>
+          <h3>Professional Tournaments</h3>
+          <p>Compete in sanctioned events with real prize money. DUPR rated and officially recognized.</p>
         </div>
-        <div class="card">
-          <h3>Benefits</h3>
+        <div class="feature-card">
+          <div class="feature-icon community">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13M16 3.13C16.8604 3.35031 17.6326 3.85071 18.1677 4.55229C18.7027 5.25387 19.0739 6.11501 19.0739 7.005C19.0739 7.89499 18.7027 8.75613 18.1677 9.45771C17.6326 10.1593 16.8604 10.6597 16 10.88"/>
+            </svg>
+          </div>
+          <h3>Active Community</h3>
+          <p>Connect with passionate players, share experiences, and build lasting friendships.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon training">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><path d="M12 6V12L16 14"/>
+            </svg>
+          </div>
+          <h3>Expert Coaching</h3>
+          <p>Learn from certified professionals with proven track records. Personalized training programs.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon premium">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15A6 6 0 0 0 9 6M9 22A6 6 0 0 0 21 9"/>
+            </svg>
+          </div>
+          <h3>Premium Equipment</h3>
+          <p>Exclusive Paddletek partnership. Get pro-grade paddles with member discounts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tournaments Section -->
+  <section id="tournaments" class="tournaments-section">
+    <div class="container">
+      <h2 class="section-title">Upcoming Tournaments</h2>
+      <div class="tournaments-grid">
+        <div class="tournament-card">
+          <div class="tournament-header">
+            <span class="tournament-badge">Featured</span>
+            <h3>Summer Championship</h3>
+          </div>
+          <div class="tournament-details">
+            <p><strong>📅 Aug 15-18, 2024</strong></p>
+            <p><strong>📍 Los Angeles, CA</strong></p>
+            <p><strong>💰 $100,000 Prize Pool</strong></p>
+            <p>The biggest summer tournament featuring elite players from across North America.</p>
+          </div>
+          <button class="btn-outline">Learn More</button>
+        </div>
+        <div class="tournament-card">
+          <div class="tournament-header">
+            <span class="tournament-badge">Pro</span>
+            <h3>East Coast Open</h3>
+          </div>
+          <div class="tournament-details">
+            <p><strong>📅 Sep 10-12, 2024</strong></p>
+            <p><strong>📍 New York, NY</strong></p>
+            <p><strong>💰 $50,000 Prize Pool</strong></p>
+            <p>Highly competitive tournament with international players and rankings.</p>
+          </div>
+          <button class="btn-outline">Learn More</button>
+        </div>
+        <div class="tournament-card">
+          <div class="tournament-header">
+            <span class="tournament-badge">Amateur</span>
+            <h3>Community Series</h3>
+          </div>
+          <div class="tournament-details">
+            <p><strong>📅 Monthly Events</strong></p>
+            <p><strong>📍 Multiple Locations</strong></p>
+            <p><strong>💰 Growing Prizes</strong></p>
+            <p>Fun, inclusive tournaments for all skill levels. Perfect for building skills.</p>
+          </div>
+          <button class="btn-outline">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Section -->
+  <section id="community" class="community-section">
+    <div class="container">
+      <div class="community-grid">
+        <div class="community-text">
+          <h2 class="section-title">Join Our Global Community</h2>
+          <p>Globalx brings together pickleball enthusiasts from every corner of the world. Whether you're a beginner picking up a paddle for the first time or a seasoned pro competing at the highest levels, you'll find your place here.</p>
+          <ul class="community-list">
+            <li>✓ Access to exclusive member-only courts</li>
+            <li>✓ Real-time match scheduling and booking</li>
+            <li>✓ Stat tracking and performance analytics</li>
+            <li>✓ Social networking with fellow players</li>
+            <li>✓ Priority tournament registration</li>
+          </ul>
+          <button class="btn-primary">Become a Member</button>
+        </div>
+        <div class="community-visual">
+          <div class="community-card">
+            <div class="community-card-item">Online Matches</div>
+            <div class="community-card-item">Live Coaching</div>
+            <div class="community-card-item">Tournaments</div>
+            <div class="community-card-item">Rankings</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop Section -->
+  <section id="shop" class="shop-section">
+    <div class="container">
+      <h2 class="section-title">Premium Paddle Collection</h2>
+      <div class="shop-grid">
+        <div class="product-card">
+          <div class="product-image pro-series"></div>
+          <h3>Paddletek Pro Series</h3>
+          <p class="product-category">Professional Grade</p>
+          <p class="product-price">$169.99</p>
+          <button class="btn-outline">Shop Now</button>
+        </div>
+        <div class="product-card">
+          <div class="product-image elite-series"></div>
+          <h3>Paddletek Elite</h3>
+          <p class="product-category">Tournament Approved</p>
+          <p class="product-price">$129.99</p>
+          <button class="btn-outline">Shop Now</button>
+        </div>
+        <div class="product-card">
+          <div class="product-image starter-series"></div>
+          <h3>Paddletek Starter</h3>
+          <p class="product-category">Perfect for Beginners</p>
+          <p class="product-price">$89.99</p>
+          <button class="btn-outline">Shop Now</button>
+        </div>
+        <div class="product-card">
+          <div class="product-image signature-series"></div>
+          <h3>Signature Collection</h3>
+          <p class="product-category">Limited Edition</p>
+          <p class="product-price">$199.99</p>
+          <button class="btn-outline">Shop Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <h3>Email</h3>
+            <p>hello@globalx.com</p>
+          </div>
+          <div class="contact-item">
+            <h3>Phone</h3>
+            <p>+1 (555) 123-4567</p>
+          </div>
+          <div class="contact-item">
+            <h3>Location</h3>
+            <p>Los Angeles, CA 90001</p>
+          </div>
+          <div class="contact-item">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+              <a href="#" class="social-link">Instagram</a>
+              <a href="#" class="social-link">Twitter</a>
+              <a href="#" class="social-link">Facebook</a>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>GLOBALX</h4>
+          <p>The premier pickleball platform for players of all levels.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
           <ul>
-            <li>Court booking priority</li>
-            <li>Member-only events</li>
-            <li>Discounts at partner shops</li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#tournaments">Tournaments</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#shop">Shop</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
           </ul>
         </div>
       </div>
-    </section>
-
-    <section id="proshop" class="container proshop">
-      <h2>Pro Shop</h2>
-      <p class="muted">We partner with Paddletek for quality paddles. Browse recommended products below.</p>
-      <div class="product-list">
-        <article class="product">
-          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop&s=" alt="Paddle">
-          <h3>Paddletek Tempest</h3>
-          <p class="price">$119.99</p>
-          <p><a class="btn" href="https://www.paddletek.com" target="_blank" rel="noopener">Buy at Paddletek</a></p>
-        </article>
-        <article class="product">
-          <img src="https://images.unsplash.com/photo-1521413073732-2a9aa3a9c6b9?q=80&w=800&auto=format&fit=crop&s=" alt="Paddle">
-          <h3>Paddletek Bantam</h3>
-          <p class="price">$89.99</p>
-          <p><a class="btn" href="https://www.paddletek.com" target="_blank" rel="noopener">Buy at Paddletek</a></p>
-        </article>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Globalx. All rights reserved. | Elevate Your Game</p>
       </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Globalx — Promoting Pickleball</p>
-      <p class="muted">Built with ♥ for the pickleball community.</p>
     </div>
   </footer>
 
