@@ -103,68 +103,80 @@
   </style>
 </head>
 <body class="bg-white font-sans text-neutral overflow-x-hidden">
-  <!-- Header -->
+  <!-- START: redesigned header -->
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200">
-    <div class="container mx-auto px-4 lg:px-8 py-4 flex justify-between items-center">
-      <div class="flex items-center gap-2">
-        <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white text-xl font-bold">G</div>
-        <h1 class="text-[24px] font-bold text-primary">Globalx</h1>
-      </div>
-      <nav class="hidden md:flex gap-8 font-medium">
-        <a href="#home" class="text-secondary border-b-2 border-secondary pb-1">Home</a>
-        <a href="#stats" class="hover:text-secondary transition-colors">Our Stats</a>
-        <a href="#partners" class="hover:text-secondary transition-colors">Partners</a>
-        <a href="#rankings" class="hover:text-secondary transition-colors">Top Players</a>
-        <a href="#athletes" class="hover:text-secondary transition-colors">Athletes</a>
-        <a href="#member" class="hover:text-secondary transition-colors">Member Zone</a>
-        <a href="#contact" class="hover:text-secondary transition-colors">Contact</a>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white font-bold">G</div>
+        <span class="text-lg font-semibold text-neutral">Globalx</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium" aria-label="Main navigation">
+        <a href="#home" class="text-neutral hover:text-secondary">Home</a>
+        <a href="#rankings" class="text-neutral hover:text-secondary">Rankings</a>
+        <a href="#athletes" class="text-neutral hover:text-secondary">Athletes</a>
+        <a href="#partners" class="text-neutral hover:text-secondary">Partners</a>
+        <a href="#member" class="text-neutral hover:text-secondary">Member Zone</a>
       </nav>
-      <div class="flex items-center gap-4">
-        <button class="bg-primary text-white px-5 py-2 rounded-lg hover:bg-secondary transition-colors hidden md:block">Join Membership</button>
-        <button class="md:hidden text-2xl"><i class="fa fa-bars"></i></button>
+
+      <div class="flex items-center gap-3">
+        <a href="#member" class="hidden md:inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">Join</a>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md text-neutral focus:outline-none" aria-expanded="false" aria-label="Open menu">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
       </div>
     </div>
   </header>
+  <!-- END: redesigned header -->
 
-  <!-- Hero -->
-  <section id="home" class="bg-gradient-to-br from-primary to-secondary text-white py-20 lg:py-32">
-    <div class="container mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+  <!-- START: redesigned hero -->
+  <section id="home" class="bg-gradient-to-br from-primary to-secondary text-white py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
       <div>
-        <h2 class="text-[40px] lg:text-[56px] font-bold leading-tight mb-6">Global Pickleball Community <br><span class="text-accent">Powered by Globalx</span></h2>
-        <p class="text-lg opacity-90 mb-8 max-w-xl">World-class pickleball courts, official DUPR rating partner & authorized Paddletek distributor. Track rankings, match records, and connect with players globally.</p>
-        <div class="flex flex-wrap gap-4">
-          <a href="#member" class="bg-accent px-7 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow">Enter Member Area</a>
-          <a href="#rankings" class="border-2 border-white px-7 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">View Player Rankings</a>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-4">Global Pickleball Community <span class="text-accent">— Powered by Globalx</span></h1>
+        <p class="text-lg sm:text-xl text-white/90 mb-6 max-w-xl">World-class pickleball courts, official DUPR rating partner & authorized Paddletek distributor. Track rankings and join events near you.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#member" class="inline-flex items-center px-5 py-3 bg-accent text-neutral font-semibold rounded-lg hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2">Join Membership</a>
+          <a href="#rankings" class="inline-flex items-center px-5 py-3 border border-white/30 rounded-lg text-white/95 hover:bg-white/10">View Rankings</a>
         </div>
       </div>
-      <div class="rounded-2xl overflow-hidden card-shadow hover-up hidden lg:block">
-        <img src="assets/hero-court.svg" alt="Pickleball Court" class="w-full h-[400px] object-cover">
+
+      <div class="hidden lg:block">
+        <div class="bg-white/5 p-6 rounded-2xl shadow-lg">
+          <img src="assets/hero-court.svg" alt="Pickleball Court" class="w-full h-64 object-cover rounded-lg">
+          <div class="mt-4 grid grid-cols-3 gap-4 text-center text-sm">
+            <div><div class="text-2xl font-bold">12k+</div><div class="text-white/80">Members</div></div>
+            <div><div class="text-2xl font-bold">350</div><div class="text-white/80">Courts</div></div>
+            <div><div class="text-2xl font-bold">24</div><div class="text-white/80">Partners</div></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+  <!-- END: redesigned hero -->
 
   <!-- Stats -->
   <section id="stats" class="py-16 lg:py-24 bg-lightgray">
     <div class="container mx-auto px-4 lg:px-8">
-      <div class="text-center mb-14"><h3 class="text-[32px] font-bold text-neutral mb-4">Our Global Figures</h3><p class="text-gray-600 max-w-2xl mx-auto">Core data showcasing our scale, venues, outreach and impact.</p></div>
+      <div class="text-center mb-14"><h3 class="text-[32px] font-bold text-neutral mb-4">Our Global Figures</h3><p class="text-gray-600 max-w-2xl mx-auto">Core data showcasing our scale, venues, [...]
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-white rounded-xl p-8 card-shadow hover-up"><div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl mb-5"><i class="fa fa-user"></i></div><div><div class="text-2xl font-bold">12k+</div><div class="text-sm text-gray-500">Members</div></div></div>
-        <div class="bg-white rounded-xl p-8 card-shadow hover-up"><div class="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center text-secondary text-2xl mb-5"><i class="fa fa-map-marker"></i></div><div><div class="text-2xl font-bold">350</div><div class="text-sm text-gray-500">Courts</div></div></div>
-        <div class="bg-white rounded-xl p-8 card-shadow hover-up"><div class="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center text-accent text-2xl mb-5"><i class="fa fa-trophy"></i></div><div><div class="text-2xl font-bold">18</div><div class="text-sm text-gray-500">Government projects</div></div></div>
-        <div class="bg-white rounded-xl p-8 card-shadow hover-up"><div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl mb-5"><i class="fa fa-handshake-o"></i></div><div><div class="text-2xl font-bold">24</div><div class="text-sm text-gray-500">Partners</div></div></div>
+        <div class="bg-white rounded-xl p-8 card-shadow hover-up"><div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl mb-5"><i class="fa fa-use[...
+        <div class="bg-white rounded-xl p-8 card-shadow hover-up"><div class="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center text-secondary text-2xl mb-5"><i class="fa fa[...
+        <div class="bg-white rounded-xl p-8 card-shadow hover-up"><div class="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center text-accent text-2xl mb-5"><i class="fa fa-troph[...
+        <div class="bg-white rounded-xl p-8 card-shadow hover-up"><div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl mb-5"><i class="fa fa-han[...
       </div>
 
-      <div class="mt-10 bg-white rounded-xl p-6 card-shadow"><div class="flex flex-col lg:flex-row gap-6 items-center"><div class="w-full lg:w-2/3"><h4 class="text-lg font-semibold mb-3">Membership benefits</h4><p class="text-gray-600">Access to prioritized court bookings, member-only tournaments and discounts on pro gear.</p></div></div></div>
+      <div class="mt-10 bg-white rounded-xl p-6 card-shadow"><div class="flex flex-col lg:flex-row gap-6 items-center"><div class="w-full lg:w-2/3"><h4 class="text-lg font-semibold mb-3">Membersh[...
     </div>
   </section>
 
   <!-- Athletes & Gallery -->
   <section id="athletes" class="py-16 lg:py-24">
     <div class="container mx-auto px-4 lg:px-8">
-      <div class="text-center mb-10"><h3 class="text-[28px] font-bold text-neutral">Paddletek Athletes & Competitions</h3><p class="text-gray-600 max-w-2xl mx-auto">Selected athlete profiles, training programs and highlights from recent competitions.</p></div>
+      <div class="text-center mb-10"><h3 class="text-[28px] font-bold text-neutral">Paddletek Athletes & Competitions</h3><p class="text-gray-600 max-w-2xl mx-auto">Selected athlete profiles, tra[...
       <div class="grid lg:grid-cols-3 gap-6">
-        <div class="bg-white rounded-xl p-6 card-shadow hover-up"><div class="flex items-center gap-4"><img src="assets/avatar-andrew.svg" alt="Athlete Andrew" class="w-20 h-20 rounded-full object-cover"><div><h4 class="font-semibold">Andrew K.</h4><div class="text-sm text-gray-500">Pro</div></div></div></div>
-        <div class="bg-white rounded-xl p-6 card-shadow hover-up lg:col-span-2"><h4 class="text-lg font-semibold mb-4">Recent Competition Highlights</h4><div class="grid sm:grid-cols-2 gap-4"><img src="https://images.unsplash.com/photo-1521413073732-2a9aa3a9c6b9?q=80&w=800&auto=format&fit=crop&s=" alt="Competition" class="w-full h-32 object-cover rounded"></div></div>
+        <div class="bg-white rounded-xl p-6 card-shadow hover-up"><div class="flex items-center gap-4"><img src="assets/avatar-andrew.svg" alt="Athlete Andrew" class="w-20 h-20 rounded-full objec[...
+        <div class="bg-white rounded-xl p-6 card-shadow hover-up lg:col-span-2"><h4 class="text-lg font-semibold mb-4">Recent Competition Highlights</h4><div class="grid sm:grid-cols-2 gap-4"><im[...
       </div>
     </div>
   </section>
@@ -172,19 +184,19 @@
   <!-- Rankings -->
   <section id="rankings" class="py-16 lg:py-24 bg-lightgray">
     <div class="container mx-auto px-4 lg:px-8">
-      <div class="text-center mb-8"><h3 class="text-[32px] font-bold text-neutral mb-4">Globalx Top Player Rankings</h3><p class="text-gray-600 max-w-2xl mx-auto">DUPR official rated leaderboard updated periodically.</p></div>
+      <div class="text-center mb-8"><h3 class="text-[32px] font-bold text-neutral mb-4">Globalx Top Player Rankings</h3><p class="text-gray-600 max-w-2xl mx-auto">DUPR official rated leaderboard [...]
       <div class="grid lg:grid-cols-2 gap-6">
-        <div class="overflow-x-auto card-shadow rounded-xl bg-white"><table class="w-full text-left"><thead class="bg-primary text-white"><tr><th class="p-4 lg:p-6 font-semibold">Rank</th><th class="p-4 lg:p-6 font-semibold">Player</th><th class="p-4 lg:p-6 font-semibold">Rating</th><th class="p-4 lg:p-6 font-semibold">Win %</th></tr></thead><tbody id="playersTableBody"></tbody></table></div>
-        <div class="bg-white rounded-xl p-6 card-shadow"><h4 class="text-lg font-semibold mb-4">Ratings Distribution</h4><canvas id="ratingChart" width="400" height="280"></canvas><div class="mt-4 text-sm text-gray-500">Data shown for sample players.json</div></div>
+        <div class="overflow-x-auto card-shadow rounded-xl bg-white"><table class="w-full text-left"><thead class="bg-primary text-white"><tr><th class="p-4 lg:p-6 font-semibold">Rank</th><th cla[...
+        <div class="bg-white rounded-xl p-6 card-shadow"><h4 class="text-lg font-semibold mb-4">Ratings Distribution</h4><canvas id="ratingChart" width="400" height="280"></canvas><div class="mt-[...
       </div>
       <div class="mt-6 text-right"><a id="exportLink" href="#" class="text-sm text-secondary hover:underline" data-fallback="#">Full leaderboard & export</a></div>
     </div>
   </section>
 
   <!-- Member Zone -->
-  <section id="member" class="py-16 lg:py-24 bg-white"><div class="container mx-auto px-4 lg:px-8"><div class="text-center mb-14"><h3 class="text-[32px] font-bold text-neutral mb-4">Member Exclusive</h3><p class="text-gray-600">Member sign-in and registration is a placeholder; connect your auth provider to enable.</p></div></div></section>
+  <section id="member" class="py-16 lg:py-24 bg-white"><div class="container mx-auto px-4 lg:px-8"><div class="text-center mb-14"><h3 class="text-[32px] font-bold text-neutral mb-4">Member Exclus[...
 
   <!-- Footer -->
-  <footer id="contact" class="bg-neutral text-white py-12"><div class="container mx-auto px-4 lg:px-8 grid md:grid-cols-4 gap-8"><div><div class="flex items-center gap-2 mb-4"><div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white text-xl font-bold">G</div><h4 class="font-semibold">Globalx</h4></div><p class="text-sm text-gray-200">Promoting pickleball globally.</p></div><div><h5 class="font-semibold mb-2">Contact</h5><p class="text-sm text-gray-200">info@globalx.example</p></div><div><h5 class="font-semibold mb-2">Partners</h5><p class="text-sm text-gray-200">Paddletek, DUPR</p></div><div><h5 class="font-semibold mb-2">Follow</h5><p class="text-sm text-gray-200">Twitter · Instagram</p></div></div></footer>
-</body>
-</html>
+  <footer id="contact" class="bg-neutral text-white py-12"><div class="container mx-auto px-4 lg:px-8 grid md:grid-cols-4 gap-8"><div><div class="flex items-center gap-2 mb-4"><div class="w-10 h-[...
+  </body>
+  </html>
