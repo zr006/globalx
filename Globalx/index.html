@@ -442,19 +442,22 @@
         // Build table rows from players data
         function populateTable(players) {
             const tbody = document.getElementById('playersTableBody');
+            if(!tbody) return;
             tbody.innerHTML = '';
             players.forEach(p => {
+                const colorClass = p.win_rate >= 75 ? 'text-green-600' : (p.win_rate >= 60 ? 'text-yellow-600' : 'text-red-600');
+                const rankClass = (p.rank === 1) ? 'text-accent' : '';
                 const tr = document.createElement('tr');
                 tr.className = 'hover:bg-lightgray transition-colors';
                 tr.innerHTML = `
-                    <td class="p-4 lg:p-6 font-bold ${p.rank===1? 'text-accent':''}">#${p.rank}</td>
+                    <td class="p-4 lg:p-6 font-bold ${rankClass}">#${p.rank}</td>
                     <td class="p-4 lg:p-6 flex items-center gap-3">
                         <img src="${p.avatar}" alt="${p.name}" class="w-10 h-10 rounded-full object-cover">
                         ${p.name}
                     </td>
                     <td class="p-4 lg:p-6 font-semibold">${p.rating.toFixed(2)}</td>
                     <td class="p-4 lg:p-6">${p.matches}</td>
-                    <td class="p-4 lg:p-6 text-${p.win_rate>=75 ? 'green' : (p.win_rate>=60?'yellow':'red')}-600 font-medium">${fmtPercent(p.win_rate)}</td>
+                    <td class="p-4 lg:p-6 ${colorClass} font-medium">${fmtPercent(p.win_rate)}</td>
                     <td class="p-4 lg:p-6"><span class="bg-gray-100 text-neutral px-3 py-1 rounded-full text-sm">${p.tier}</span></td>
                 `;
                 tbody.appendChild(tr);
@@ -518,44 +521,53 @@
                 const blob = new Blob([JSON.stringify(players, null, 2)], {type: 'application/json'});
                 const url = URL.createObjectURL(blob);
                 const exportLink = document.getElementById('exportLink');
-                exportLink.href = url;
-                exportLink.download = 'globalx_players_leaderboard.json';
+                if(exportLink) { exportLink.href = url; exportLink.download = 'globalx_players_leaderboard.json'; }
 
-                // filter checkboxes (demo: simply show/hide rows)
-                document.getElementById('filterPro').addEventListener('change', () => applyFilters(players));
-                document.getElementById('filterAdv').addEventListener('change', () => applyFilters(players));
-                document.getElementById('filterAm').addEventListener('change', () => applyFilters(players));
+                // filter checkboxes (demo: simply show/hide rows) - guard existence
+                const fPro = document.getElementById('filterPro');
+                const fAdv = document.getElementById('filterAdv');
+                const fAm = document.getElementById('filterAm');
+                if(fPro) fPro.addEventListener('change', () => applyFilters(players));
+                if(fAdv) fAdv.addEventListener('change', () => applyFilters(players));
+                if(fAm) fAm.addEventListener('change', () => applyFilters(players));
             } catch (err) {
                 console.error(err);
             }
         }
 
         function applyFilters(players) {
-            const showPro = document.getElementById('filterPro').checked;
-            const showAdv = document.getElementById('filterAdv').checked;
-            const showAm = document.getElementById('filterAm').checked;
+            const fPro = document.getElementById('filterPro');
+            const fAdv = document.getElementById('filterAdv');
+            const fAm = document.getElementById('filterAm');
+            const showPro = fPro ? fPro.checked : true;
+            const showAdv = fAdv ? fAdv.checked : true;
+            const showAm = fAm ? fAm.checked : true;
             const tbody = document.getElementById('playersTableBody');
+            if(!tbody) return;
             tbody.innerHTML = '';
             players.forEach(p => {
-                const isPro = p.tier.toLowerCase().includes('pro') && !p.tier.toLowerCase().includes('amateur');
-                const isAdv = p.tier.toLowerCase().includes('advanced');
-                const isAm = p.tier.toLowerCase().includes('amateur') || p.tier.toLowerCase().includes('club') || p.tier.toLowerCase().includes('amateur');
+                const tierLower = (p.tier || '').toLowerCase();
+                const isPro = tierLower.includes('pro') && !tierLower.includes('amateur');
+                const isAdv = tierLower.includes('advanced');
+                const isAm = tierLower.includes('amateur') || tierLower.includes('club');
                 let show = true;
                 if(isPro && !showPro) show = false;
                 if(isAdv && !showAdv) show = false;
                 if(isAm && !showAm) show = false;
                 if(show) {
+                    const colorClass = p.win_rate >= 75 ? 'text-green-600' : (p.win_rate >= 60 ? 'text-yellow-600' : 'text-red-600');
+                    const rankClass = (p.rank === 1) ? 'text-accent' : '';
                     const tr = document.createElement('tr');
                     tr.className = 'hover:bg-lightgray transition-colors';
                     tr.innerHTML = `
-                        <td class="p-4 lg:p-6 font-bold ${p.rank===1? 'text-accent':''}">#${p.rank}</td>
+                        <td class="p-4 lg:p-6 font-bold ${rankClass}">#${p.rank}</td>
                         <td class="p-4 lg:p-6 flex items-center gap-3">
                             <img src="${p.avatar}" alt="${p.name}" class="w-10 h-10 rounded-full object-cover">
                             ${p.name}
                         </td>
                         <td class="p-4 lg:p-6 font-semibold">${p.rating.toFixed(2)}</td>
                         <td class="p-4 lg:p-6">${p.matches}</td>
-                        <td class="p-4 lg:p-6 text-${p.win_rate>=75 ? 'green' : (p.win_rate>=60?'yellow':'red')}-600 font-medium">${fmtPercent(p.win_rate)}</td>
+                        <td class="p-4 lg:p-6 ${colorClass} font-medium">${fmtPercent(p.win_rate)}</td>
                         <td class="p-4 lg:p-6"><span class="bg-gray-100 text-neutral px-3 py-1 rounded-full text-sm">${p.tier}</span></td>
                     `;
                     tbody.appendChild(tr);
