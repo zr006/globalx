@@ -1,0 +1,5 @@
+[
+  { "name": "Alex Morgan", "rating": 8.2, "win_rate": 82, "tier": "Pro" },
+  { "name": "Taylor Swift", "rating": 7.1, "win_rate": 71, "tier": "Advanced" },
+  { "name": "Sam Lee", "rating": 6.4, "win_rate": 63, "tier": "Amateur" }
+]
